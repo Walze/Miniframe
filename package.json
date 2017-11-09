@@ -1,0 +1,36 @@
+{
+  "name": "template-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "js/main.js",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-minify-webpack-plugin": "^0.2.0",
+    "babel-preset-env": "^1.6.0",
+    "css-loader": "^0.28.7",
+    "extract-loader": "^1.0.1",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^0.11.2",
+    "glob": "^7.1.2",
+    "html-loader": "^0.5.1",
+    "html-webpack-plugin": "^2.30.1",
+    "html-webpack-prefix-plugin": "^0.1.1",
+    "interactjs": "^1.2.9",
+    "style-loader": "^0.18.2",
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.8.2",
+    "webpack-livereload-plugin": "^0.11.0"
+  },
+  "scripts": {
+    "test": "node server.js",
+    "build": "webpack --config webpack.config.js",
+    "dev": "webpack-dev-server --progress --colors --config webpack.config.js --inline --hot"
+  },
+  "author": "Wallace Fares",
+  "license": "ISC"
+}
