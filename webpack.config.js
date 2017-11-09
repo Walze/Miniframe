@@ -47,7 +47,7 @@ const config = {
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, `public_html/${projname}_files`),
+    path: path.resolve(__dirname, `docs/${projname}_files`),
     publicPath: ''
   },
   resolve: {},
@@ -97,7 +97,7 @@ config.plugins = [
 
 // mode selector
 if (MODE == 'build') {
-  config.output.path = path.resolve(__dirname, `public_html/${projname}_files`);
+  config.output.path = path.resolve(__dirname, `docs/${projname}_files`);
 
   let uglifyjsConfig = {
     sourceMap: false,
