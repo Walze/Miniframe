@@ -60,7 +60,10 @@ const config = {
   devServer: {
     publicPath: '/', //where it compiles
     contentBase: './', //where index.html is
-    hot: true
+    hot: true,
+    historyApiFallback: {
+      index: 'index.html'
+    }
   }
 };
 
@@ -113,7 +116,7 @@ if (MODE == 'build') {
     }
   };
   config.plugins.push(new uglifyJS(uglifyjsConfig));
-} else if (MODE == 'dev') {
+} else if (MODE == 'dev' || MODE == 'lol') {
   config.output.path = path.resolve(__dirname, '');
   htmlwebpack.options.prefix = '';
   htmlwebpack.options.filename = 'index.html';

@@ -5,7 +5,7 @@ const page = new Replacer({
   contact: 'contact.html'
 });
 
-document.querySelectorAll('[route-href]').forEach(el => {
+document.querySelectorAll('[href]').forEach(el => {
   el.addEventListener('click', e => {
     const link = e.target.getAttribute('route-href');
 
@@ -16,7 +16,7 @@ document.querySelectorAll('[route-href]').forEach(el => {
 var request = new XMLHttpRequest();
 request.open('GET', 'http://localhost:3000/api', true);
 
-request.onload = function() {
+request.onload = function () {
   if (request.status >= 200 && request.status < 400) {
     // Success!
     var data = JSON.parse(request.responseText);
@@ -26,7 +26,7 @@ request.onload = function() {
   }
 };
 
-request.onerror = function() {
+request.onerror = function () {
   // There was a connection error of some sort
 };
 
