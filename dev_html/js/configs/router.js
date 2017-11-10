@@ -1,3 +1,5 @@
+const host = require('./host');
+
 export class Router {
   constructor(Page) {
     // URL fields
@@ -19,7 +21,7 @@ export class Router {
     // Listening for Href clicks
     document.querySelectorAll('[href]').forEach(el => {
       el.addEventListener('click', ev => {
-        window.location = ev.target.getAttribute('href');
+        window.location = host + ev.target.getAttribute('href');
       });
     });
   }

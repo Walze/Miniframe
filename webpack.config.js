@@ -1,13 +1,16 @@
-const path = require('path');
-const webpack = require('webpack');
-const glob = require('glob');
-const uglifyJS = require('uglifyjs-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPrefixPlugin = require('html-webpack-prefix-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
-const MODE = process.env.npm_lifecycle_event;
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const uglifyJS = require('uglifyjs-webpack-plugin');
+const webpack = require('webpack');
+const path = require('path');
+
 const projname = 'Template';
+
+const MODE = process.env.npm_lifecycle_event;
+
+const Address = require('./dev_html/js/configs/host');
 
 const clientConfig = {
   entry: './dev_html/js/main.js',
@@ -66,7 +69,7 @@ var htmlwebpack = new HtmlWebpackPlugin({
   title: projname,
   filename: '../index.html',
   template: 'dev_html/index.html',
-  prefix: `/${projname}_files/`,
+  prefix: `${Address}/${projname}_files/`,
   minify: {
     removeComments: true
   }

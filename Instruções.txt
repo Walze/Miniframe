@@ -1,7 +1,0 @@
-comandos console:
-
-'npm install' para instalar pacotes npm
-
-'npm run build' para compilar para produção
-
-'npm run serve' para servidor virtual (DEV mode)
