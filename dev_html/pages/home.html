@@ -1,3 +1,21 @@
 <div>
-  home
+  <style>
+    h1 {
+      color: green;
+    }
+  </style>
+
+  <h1>Home</h1>
+  <p id="counter">1</p>
+
+  <script>
+    (function () {
+      console.log('teste');
+      alert();
+      setInterval(() => {
+        document.querySelector('#counter').innerHTML += 1;
+      }, 500)
+
+    })();
+  </script>
 </div>

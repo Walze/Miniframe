@@ -2,12 +2,12 @@ export class Replacer {
   constructor(pages) {
     const req = require.context('../../pages/', true, /^\.\/.*\.html$/);
     const path = './';
-    let final = {};
+    let finalPage = {};
 
     for (let page in pages) {
-      final[page] = req(path + pages[page]);
+      finalPage[page] = req(path + pages[page]);
     }
 
-    return final;
+    return finalPage;
   }
 }

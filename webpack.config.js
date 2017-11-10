@@ -73,7 +73,7 @@ var htmlwebpack = new HtmlWebpackPlugin({
   title: projname,
   filename: '../index.html',
   template: 'dev_html/index.html',
-  prefix: `${projname}_files/`,
+  prefix: `/${projname}_files/`,
   minify: {
     removeComments: true
   }
@@ -118,7 +118,7 @@ if (MODE == 'build') {
   config.plugins.push(new uglifyJS(uglifyjsConfig));
 } else if (MODE == 'dev' || MODE == 'lol') {
   config.output.path = path.resolve(__dirname, '');
-  htmlwebpack.options.prefix = '';
+  htmlwebpack.options.prefix = '/';
   htmlwebpack.options.filename = 'index.html';
   config.module.rules[1].use[0].loader = `file-loader?name=${projname}_files/[name].[ext]`;
 }
