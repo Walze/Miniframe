@@ -1,5 +1,5 @@
 // JS files
-import './configs/routingConfigs';
+import './configs/routeExe';
 import './router';
 
 // CSS files

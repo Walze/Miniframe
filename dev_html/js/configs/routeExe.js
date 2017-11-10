@@ -22,6 +22,5 @@ const View = document.querySelector('#view');
 
 View.innerHTML = Append;
 
-const Script = View.querySelector('script');
-eval(Script.innerHTML);
+eval(View.querySelector('script').innerHTML);
 
