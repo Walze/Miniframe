@@ -1,21 +1,20 @@
-<div>
-  <style>
-    h1 {
-      color: green;
-    }
-  </style>
+<style>
+  h1 {
+    color: green;
+  }
+</style>
 
+<div>
   <h1>Home</h1>
   <p id="counter">1</p>
 
-  <script>
-    (function () {
-      console.log('teste');
-      alert();
-      setInterval(() => {
-        document.querySelector('#counter').innerHTML += 1;
-      }, 500)
-
-    })();
-  </script>
+  <p>
+    Each page has it's own style and script.
+  </p>
 </div>
+
+<script>
+  setInterval(() => {
+    document.querySelector('#counter').innerHTML++;
+  }, 100)
+</script>

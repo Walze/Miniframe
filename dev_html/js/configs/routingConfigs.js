@@ -15,4 +15,13 @@ if (Page[URL[0]])
 else
     newPage = Page.home;
 
-document.querySelector('#view').innerHTML = newPage;
+//document.querySelector('#view').innerHTML = newPage;
+
+const Append = document.createElement('div').innerHTML = newPage;
+const View = document.querySelector('#view');
+
+View.innerHTML = Append;
+
+const Script = View.querySelector('script');
+eval(Script.innerHTML);
+
