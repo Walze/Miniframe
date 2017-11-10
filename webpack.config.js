@@ -9,7 +9,7 @@ const LiveReloadPlugin = require('webpack-livereload-plugin');
 const MODE = process.env.npm_lifecycle_event;
 const projname = 'Template';
 
-const config = {
+const clientConfig = {
   entry: './dev_html/js/main.js',
   module: {
     rules: [
@@ -50,13 +50,6 @@ const config = {
     path: path.resolve(__dirname, `docs/${projname}_files`),
     publicPath: ''
   },
-  resolve: {},
-  node: {
-    fs: 'empty',
-    net: 'empty',
-    tls: 'empty',
-    dns: 'empty'
-  },
   devServer: {
     publicPath: '/', //where it compiles
     contentBase: './', //where index.html is
@@ -87,7 +80,7 @@ var livereload = new LiveReloadPlugin();
 //end plugins declarations
 
 //insert plugins
-config.plugins = [
+clientConfig.plugins = [
   extract,
   htmlwebpack,
   htmlwebpackprefix,
@@ -97,30 +90,28 @@ config.plugins = [
 
 // mode selector
 if (MODE == 'build') {
-  config.output.path = path.resolve(__dirname, `docs/${projname}_files`);
-
-  let uglifyjsConfig = {
-    sourceMap: false,
-    uglifyOptions: {
-      output: {
-        comments: false,
-        beautify: false,
-        unused: true
-      },
-      compress: {
-        dead_code: true,
-        global_defs: {
-          DEBUG: false
+  clientConfig.output.path = path.resolve(__dirname, `docs/${projname}_files`);
+  clientConfig.plugins.push(
+    new uglifyJS({
+      sourceMap: false,
+      uglifyOptions: {
+        output: {
+          comments: false,
+          beautify: false,
+          unused: true
+        },
+        compress: {
+          dead_code: true,
+          global_defs: { DEBUG: false }
         }
       }
-    }
-  };
-  config.plugins.push(new uglifyJS(uglifyjsConfig));
-} else if (MODE == 'dev' || MODE == 'lol') {
-  config.output.path = path.resolve(__dirname, '');
+    })
+  );
+} else if (MODE == 'dev') {
+  clientConfig.output.path = path.resolve(__dirname, '');
   htmlwebpack.options.prefix = '/';
   htmlwebpack.options.filename = 'index.html';
-  config.module.rules[1].use[0].loader = `file-loader?name=${projname}_files/[name].[ext]`;
+  clientConfig.module.rules[1].use[0].loader = `file-loader?name=${projname}_files/[name].[ext]`;
 }
 
-module.exports = config;
+module.exports = [clientConfig];

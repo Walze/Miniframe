@@ -1,6 +1,7 @@
+import { CssImporter } from './configs/StylePathReplacer';
+
 // JS files
-import './configs/routeExe';
-import './router';
+import './routes';
 
 // CSS files
-import './../css/main.css';
+new CssImporter(['main.css']);

@@ -6,15 +6,20 @@
 
 <div>
   <h1>Contact</h1>
-  <p id="counter">1</p>
-
   <p>
     Each page has it's own style and script.
   </p>
+
+  <p id="counter">1</p>
 </div>
 
 <script>
   setInterval(() => {
-    document.querySelector('#counter').innerHTML++;
-  }, 100)
+    try {
+      counter++;
+      document.querySelector('#counter').innerHTML = counter;
+    } catch (err) {
+      document.querySelector('#counter').innerHTML = err;
+    }
+  }, 500)
 </script>

@@ -14,7 +14,10 @@
 </div>
 
 <script>
+  var counter = 1;
+
   setInterval(() => {
-    document.querySelector('#counter').innerHTML++;
+    counter++;
+    document.querySelector('#counter').innerHTML = counter;
   }, 100)
 </script>
