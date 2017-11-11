@@ -12,3 +12,11 @@
     Each page has it's own style and script.
   </p>
 </div>
+
+<script>
+  try {
+    document.querySelector('#counter').innerHTML = text;
+  } catch (er) {
+    document.querySelector('#counter').innerHTML = 'var text is not defined in this html file <br>' + er;
+  }
+</script>

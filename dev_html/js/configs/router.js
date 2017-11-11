@@ -1,32 +1,45 @@
 const host = require('./host');
 
 export class Router {
-  constructor(Page) {
-    // URL fields
-    this.URL = document.location.href.split('/').slice(3);
-
-    // Redirect to home if 404'd
-    let redirectHTML;
-    if (Page[this.URL[0]]) redirectHTML = Page[this.URL[0]];
-    else redirectHTML = Page.home;
-
-    // Creating view and appending it
-    const Append = (document.createElement('div').innerHTML = redirectHTML);
-    this.View = document.querySelector('#view');
-    this.View.innerHTML = Append;
-
-    // Executing script tag
-    eval(this.View.querySelector('script').innerHTML);
+  constructor(Pages, SPA = true) {
+    this.Pages = Pages;
 
     // Listening for Href clicks
     document.querySelectorAll('[href]').forEach(el => {
       el.addEventListener('click', ev => {
-        window.location = host + ev.target.getAttribute('href');
+        ev.preventDefault();
+        this.redirect(ev.target.getAttribute('href'));
+
+        if (!SPA) window.location = host + ev.target.getAttribute('href');
       });
     });
+
+    this.redirect(Pages);
   }
 
   redirect(where) {
-    window.location = where;
+    // URL fields
+    this.URL = document.location.href.split('/').slice(3);
+
+    if (!this.URL[0])
+      this.URL = String(where).split('/').splice(1);
+
+    // Redirect to home if 404'd
+    let redirectHTML;
+    if (this.Pages[this.URL[0]])
+      redirectHTML = this.Pages[this.URL[0]];
+    else
+      redirectHTML = this.Pages.home;
+
+    // Creating view and appending it
+    const Append = document.createElement('div').innerHTML = redirectHTML;
+    this.View = document.querySelector('#view');
+    this.View.innerHTML = Append;
+
+    // Executing script tag
+    if (this.View.querySelector('script'))
+      eval(this.View.querySelector('script').innerHTML);
+
+
   }
 }

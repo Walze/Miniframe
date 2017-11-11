@@ -14,12 +14,9 @@
 </div>
 
 <script>
-  setInterval(() => {
-    try {
-      counter++;
-      document.querySelector('#counter').innerHTML = counter;
-    } catch (err) {
-      document.querySelector('#counter').innerHTML = err;
-    }
-  }, 500)
+  try {
+    document.querySelector('#counter').innerHTML = text;
+  } catch (er) {
+    document.querySelector('#counter').innerHTML = 'var text is not defined in this html file <br>' + er;
+  }
 </script>

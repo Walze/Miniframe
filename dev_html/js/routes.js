@@ -8,6 +8,7 @@ const Page = new Replacer({
 });
 
 export const router = new Router(Page);
+console.log(router);
 
 // Redirect Example
 // router.redirect('/contact');
