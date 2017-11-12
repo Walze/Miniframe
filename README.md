@@ -11,7 +11,7 @@ Easy routing
 const Pages = new Replacer({
   home: 'home.html',
   contact: 'contact.html',
-  content: 'content.html',
+  about: 'about.html',
   // Name of the page: 'name of file.ext'
 });
 

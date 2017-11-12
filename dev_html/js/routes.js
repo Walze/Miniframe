@@ -4,7 +4,7 @@ import { Router } from './configs/router';
 const Pages = new Replacer({
   home: 'home.html',
   contact: 'contact.html',
-  content: 'content.html'
+  about: 'about.html'
 });
 
 export const router = new Router(Pages);
