@@ -26,6 +26,7 @@ export const router = new Router(Pages);
 
 
 Html files must be placed at PAGES folder.
+
 Folder which html files are placed can be changed at _RoutePathReplacer.js_.
 
 
