@@ -1,6 +1,12 @@
 # Miniframe
 
-Simple and small framework for small/medium projects
+Simple and small framework for small/medium projects.
+
+Features:
+ * Router
+ * Pretty URL and multiple URL params
+ * Components (_soon_)
+ * Interpolation (_soon_)
 
 
 ## Router
