@@ -10,7 +10,10 @@ const projname = 'Template';
 
 const MODE = process.env.npm_lifecycle_event;
 
-const Address = require('./dev_html/js/configs/host');
+let Host;
+MODE == 'build' ?
+  Host = require('./config.json') :
+  Host = '';
 
 const clientConfig = {
   entry: './dev_html/js/main.js',
@@ -69,7 +72,7 @@ var htmlwebpack = new HtmlWebpackPlugin({
   title: projname,
   filename: '../index.html',
   template: 'dev_html/index.html',
-  prefix: `${Address}/${projname}_files/`,
+  prefix: `${Host}${projname}_files/`,
   minify: {
     removeComments: true
   }

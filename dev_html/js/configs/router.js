@@ -1,4 +1,4 @@
-const host = require('./host');
+const config = require('./../../../config');
 
 export class Router {
   constructor(Pages, SPA = true) {
@@ -10,7 +10,7 @@ export class Router {
         ev.preventDefault();
         this.redirect(ev.target.getAttribute('href'));
 
-        if (!SPA) window.location = host + ev.target.getAttribute('href');
+        if (!SPA) window.location = config.host + ev.target.getAttribute('href');
       });
     });
 
