@@ -3,6 +3,7 @@ const config = require('./../../../config');
 export class Router {
   constructor(Pages, SPA = true) {
     this.Pages = Pages;
+    this.SPA = SPA;
 
     // Listening for Href clicks
     document.querySelectorAll('[href]').forEach(el => {
@@ -21,7 +22,7 @@ export class Router {
     // URL fields
     this.URL = document.location.href.split('/').slice(3);
 
-    if (!this.URL[0])
+    if (!this.URL[0] || this.SPA)
       this.URL = String(where).split('/').splice(1);
 
     // Redirect to home if 404'd
