@@ -9,7 +9,8 @@ const path = require('path');
 const MODE = process.env.npm_lifecycle_event;
 
 let Configs = require('./config.json');
-MODE == 'build' ? (Configs.host = Configs.host) : (Configs.host = '');
+//MODE == 'build' ? (Configs.host = Configs.host) : (Configs.host = '');
+Configs.host = '';
 
 const clientConfig = {
   entry: './dev_html/js/main.js',
