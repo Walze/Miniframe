@@ -11,7 +11,8 @@ export class Router {
         ev.preventDefault();
         this.redirect(ev.target.getAttribute('href'));
 
-        if (!SPA) window.location = config.host + ev.target.getAttribute('href');
+        if (!SPA)
+          window.location = config.host + ev.target.getAttribute('href');
       });
     });
 
@@ -23,24 +24,23 @@ export class Router {
     this.URL = document.location.href.split('/').slice(3);
 
     if (!this.URL[0] || this.SPA)
-      this.URL = String(where).split('/').splice(1);
+      this.URL = String(where)
+        .split('/')
+        .splice(1);
 
     // Redirect to home if 404'd
     let redirectHTML;
-    if (this.Pages[this.URL[0]])
-      redirectHTML = this.Pages[this.URL[0]];
-    else
-      redirectHTML = this.Pages.home;
+    if (this.Pages[this.URL[0]]) redirectHTML = this.Pages[this.URL[0]];
+    else redirectHTML = this.Pages.home;
 
     // Creating view and appending it
-    const Append = document.createElement('div').innerHTML = redirectHTML;
+    const Append = (document.createElement('div').innerHTML = redirectHTML);
     this.View = document.querySelector('#view');
     this.View.innerHTML = Append;
 
     // Executing script tag
-    if (this.View.querySelector('script'))
-      eval(this.View.querySelector('script').innerHTML);
+    const ScriptTag = this.View.querySelector('script');
 
-
+    if (ScriptTag) eval(ScriptTag.innerHTML);
   }
 }

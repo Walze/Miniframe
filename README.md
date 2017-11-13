@@ -6,12 +6,12 @@ Features:
  * Router
  * Pretty URL and multiple URL params
  * Components (_soon_)
- * Interpolation (_soon_)
+ * Interpolation (_maybe_)
 
 
 ## Router
 
-Easy routing 
+Easy routing
 
 ```javascript
 const Pages = new Replacer({
@@ -23,7 +23,6 @@ const Pages = new Replacer({
 
 export const router = new Router(Pages);
 ```
-
 
 Html files must be placed at PAGES folder.
 

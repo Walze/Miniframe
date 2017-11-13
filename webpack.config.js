@@ -6,14 +6,10 @@ const uglifyJS = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
 
-const projname = 'Template';
-
 const MODE = process.env.npm_lifecycle_event;
 
-let Host;
-MODE == 'build' ?
-  Host = require('./config.json') :
-  Host = '';
+let Configs = require('./config.json');
+MODE == 'build' ? (Configs.host = Configs.host) : (Configs.host = '');
 
 const clientConfig = {
   entry: './dev_html/js/main.js',
@@ -53,7 +49,7 @@ const clientConfig = {
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, `docs/${projname}_files`),
+    path: path.resolve(__dirname, `docs/${Configs.projName}_files`),
     publicPath: ''
   },
   devServer: {
@@ -69,10 +65,10 @@ const clientConfig = {
 //plugin declarations
 var extract = new ExtractTextPlugin('bundle.css');
 var htmlwebpack = new HtmlWebpackPlugin({
-  title: projname,
+  title: Configs.projName,
   filename: '../index.html',
   template: 'dev_html/index.html',
-  prefix: `${Host}${projname}_files/`,
+  prefix: `${Configs.host}${Configs.projName}_files/`,
   minify: {
     removeComments: true
   }
@@ -96,7 +92,10 @@ clientConfig.plugins = [
 
 // mode selector
 if (MODE == 'build') {
-  clientConfig.output.path = path.resolve(__dirname, `docs/${projname}_files`);
+  clientConfig.output.path = path.resolve(
+    __dirname,
+    `docs/${Configs.projName}_files`
+  );
   clientConfig.plugins.push(
     new uglifyJS({
       sourceMap: false,
@@ -117,7 +116,7 @@ if (MODE == 'build') {
   clientConfig.output.path = path.resolve(__dirname, '');
   htmlwebpack.options.prefix = '/';
   htmlwebpack.options.filename = 'index.html';
-  clientConfig.module.rules[1].use[0].loader = `file-loader?name=${projname}_files/[name].[ext]`;
+  clientConfig.module.rules[1].use[0].loader = `file-loader?name=${Configs.projName}_files/[name].[ext]`;
 }
 
 module.exports = [clientConfig];
