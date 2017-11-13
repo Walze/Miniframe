@@ -14,11 +14,25 @@ Features:
 Easy routing
 
 ```javascript
-const Pages = new Replacer({
-  home: 'home.html',
-  contact: 'contact.html',
-  about: 'about.html',
-  // Name of the page: 'name of file.ext'
+const Pages = new Component({
+  home: {
+    path: 'home.html',
+    componentName: 'home-app'
+  },
+  about: {
+    path: 'about.html',
+    componentName: 'about-app'
+  },
+  contact: {
+    path: 'contact.html',
+    componentName: 'contact-app'
+  }
+  /* 
+  page name: {
+    file path: 'file.extention' // Files are inside Pages folder
+    component name: 'example-app' // name must have dash (-) to avoid html tags conflic 
+  }
+  */
 });
 
 export const router = new Router(Pages);
