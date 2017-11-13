@@ -16,7 +16,7 @@ export class Router {
       });
     });
 
-    this.redirect(Pages);
+    this.redirect(this.Pages);
   }
 
   redirect(where) {
@@ -30,8 +30,10 @@ export class Router {
 
     // Redirect to home if 404'd
     let redirectHTML;
-    if (this.Pages[this.URL[0]]) redirectHTML = this.Pages[this.URL[0]];
-    else redirectHTML = this.Pages.home;
+
+    if (this.Pages[this.URL[0]])
+      redirectHTML = this.Pages[this.URL[0]].innerHTML;
+    else redirectHTML = this.Pages.home.innerHTML;
 
     // Creating view and appending it
     const Append = (document.createElement('div').innerHTML = redirectHTML);
