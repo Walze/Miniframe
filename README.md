@@ -30,7 +30,7 @@ const Pages = new Component({
   /* 
   page name: {
     file path: 'file.extention' // Files are inside Pages folder
-    component name: 'example-app' // name must have dash (-) to avoid html tags conflic 
+    component name: 'example-app' // name must have dash (-) to avoid html tags conflict 
   }
   */
 });
