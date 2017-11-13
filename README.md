@@ -6,8 +6,6 @@ Features:
  * Router
  * Pretty URL and multiple URL params
  * Components
- * Interpolation (_maybe_)
-
 
 ## Router
 
