@@ -5,7 +5,7 @@ Simple and small framework for small/medium projects.
 Features:
  * Router
  * Pretty URL and multiple URL params
- * Components (_soon_)
+ * Components
  * Interpolation (_maybe_)
 
 
