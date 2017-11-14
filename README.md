@@ -47,10 +47,15 @@ const Pages = new Component({
 export const router = new Router(Pages);
 ```
 
-Html files must be placed at PAGES folder.
+Html files must be placed at _./dev_html/pages_ folder. Folder which html files are placed can be changed at _RoutePathReplacer.js_.
 
-Folder which html files are placed can be changed at _RoutePathReplacer.js_.
+Components are generated automatically when pages are instantiated.
 
+```html
+<home-app></home-app>
+<about-app></about-app>
+<contact-app></contact-app>
+```
 
 ## Single Page App support
 
@@ -72,4 +77,4 @@ To deploy a project you need to write your host name in _config.json_. You shoul
 }
 ```
 
-If you're not using Single Page App, you must include a _.htaccess_ file to always redirect to index.html in the root of your project after deploy. 
+If you're not using Single Page App, you must include a _.htaccess_ file to always redirect to index.html in the root of your project after deploy. There a example _.htaccess_ file in the project.
