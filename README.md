@@ -7,6 +7,18 @@ Features:
  * Pretty URL and multiple URL params
  * Components
 
+
+## Installation / Commands
+
+```
+npm install // Install NPM dependencies
+
+npm run dev // Starts development server
+
+npm run build // Runs production build
+
+```
+
 ## Router
 
 Easy routing
