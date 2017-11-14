@@ -68,7 +68,7 @@ new Router(Pages, false);
 
 ## Additional Information and Deployment
 
-To deploy a project you need to write your host name in _config.json_. You should also change your project inside of the same file.
+To deploy a project you need to write your host name in _config.json_. You should also change your project name inside of the same file.
 
 ```json
 {
