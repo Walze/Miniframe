@@ -16,7 +16,6 @@ npm install // Install NPM dependencies
 npm run dev // Starts development server
 
 npm run build // Runs production build
-
 ```
 
 ## Router
@@ -61,3 +60,16 @@ Comes enabled by default
 // To disable it
 new Router(Pages, false);
 ```
+
+## Additional Information and Deployment
+
+To deploy a project you need to write your host name in _config.json_. You should also change your project inside of the same file.
+
+```json
+{
+    "host": "http://localhost:8080/",
+    "projName": "Template"
+}
+```
+
+If you're not using Single Page App, you must include a _.htaccess_ file to always redirect to index.html in the root of your project after deploy. 
