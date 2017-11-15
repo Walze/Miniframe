@@ -47,7 +47,7 @@ const Pages = new Component({
 export const router = new Router(Pages);
 ```
 
-Html files must be placed at _./dev_html/pages_ folder. Folder which html files are placed can be changed at _RoutePathReplacer.js_.
+Html files must be placed at _./dev_html/pages_ folder. Folder which html files are placed can be changed at _ComponentMaker.js_.
 
 Components are generated automatically when pages are instantiated.
 
