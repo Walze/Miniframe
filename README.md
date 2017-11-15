@@ -57,6 +57,23 @@ Components are generated automatically when pages are instantiated.
 <contact-app></contact-app>
 ```
 
+You can also make your own components:
+
+```javascript
+const Components = new Component({
+  nav: {
+    path: 'nav.html',
+    componentName: 'nav-app'
+  }
+});
+```
+
+Then your new component in your html
+
+```html
+<nav-app></nav-app>
+```
+
 ## Single Page App support
 
 Comes enabled by default
