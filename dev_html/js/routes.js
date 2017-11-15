@@ -19,5 +19,16 @@ const Pages = new Component({
 export const router = new Router(Pages);
 console.log(router);
 
+const Components = new Component({
+  nav: {
+    path: 'nav.html',
+    componentName: 'nav-app'
+  }
+});
+
+
+
+
+
 // Redirect Example
 // router.redirect('/contact');

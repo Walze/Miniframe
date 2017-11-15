@@ -22,12 +22,12 @@ export class Router {
   redirect(where) {
     // URL fields
     this.URL = document.location.href.split('/').slice(3);
-
-    if (!this.URL[0] || this.SPA)
+    if (!this.URL[0] && this.SPA)
       this.URL = String(where)
         .split('/')
         .splice(1);
 
+    console.log(this.URL, where, 'dis');
     // Redirect to home if 404'd
     let redirectHTML;
 
