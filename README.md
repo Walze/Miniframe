@@ -4,6 +4,7 @@ Simple and small framework for small/medium projects.
 
 Features:
  * Router
+ * SPA
  * Pretty URL and multiple URL params
  * Components
 
@@ -49,6 +50,8 @@ export const router = new Router(Pages);
 
 Html files must be placed at _./dev_html/pages_ folder. Folder which html files are placed can be changed at _ComponentMaker.js_.
 
+###Components
+
 Components are generated automatically when pages are instantiated.
 
 ```html
@@ -68,13 +71,13 @@ const Components = new Component({
 });
 ```
 
-Then your new component in your html
+Then put your new component in your html
 
 ```html
 <nav-app></nav-app>
 ```
 
-## Single Page App support
+## Single Page App
 
 Comes enabled by default
 
