@@ -13,7 +13,7 @@ let Configs = require('./config.json');
 Configs.host = '';
 
 const clientConfig = {
-  entry: './dev_html/js/main.js',
+  entry: './src/js/main.js',
   module: {
     rules: [
       {
@@ -68,7 +68,7 @@ var extract = new ExtractTextPlugin('bundle.css');
 var htmlwebpack = new HtmlWebpackPlugin({
   title: Configs.projName,
   filename: '../index.html',
-  template: 'dev_html/index.html',
+  template: 'src/index.html',
   prefix: `${Configs.host}${Configs.projName}_files/`,
   minify: {
     removeComments: true
