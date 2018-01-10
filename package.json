@@ -25,8 +25,7 @@
   },
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "dev":
-      "webpack-dev-server  --devtool eval --progress --colors --config webpack.config.js --hot --history-api-fallback"
+    "dev": "webpack-dev-server  --devtool eval --progress --colors --config webpack.config.js --hot --history-api-fallback"
   },
   "author": "Wallace Fares",
   "license": "ISC"
