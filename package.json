@@ -1,31 +1,25 @@
 {
-  "name": "template-site",
+  "name": "miniframe",
   "version": "1.0.0",
-  "description": "Simple routing and components framework",
-  "main": "js/main.js",
+  "description": "",
+  "main": "webpack.config.js",
   "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
-    "babel-minify-webpack-plugin": "^0.2.0",
-    "babel-preset-env": "^1.6.0",
-    "css-loader": "^0.28.7",
-    "extract-loader": "^1.0.1",
-    "extract-text-webpack-plugin": "^3.0.0",
-    "file-loader": "^0.11.2",
-    "html-loader": "^0.5.1",
+    "babel-preset-env": "^1.6.1",
+    "css-loader": "^0.28.8",
+    "file-loader": "^1.1.6",
+    "html-loader": "^0.5.4",
     "html-webpack-plugin": "^2.30.1",
-    "html-webpack-prefix-plugin": "^0.1.1",
-    "interactjs": "^1.2.9",
-    "style-loader": "^0.18.2",
-    "uglifyjs-webpack-plugin": "^0.4.6",
-    "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.8.2",
-    "webpack-livereload-plugin": "^0.11.0"
+    "style-loader": "^0.19.1",
+    "uglifyjs-webpack-plugin": "^1.1.6",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.10.1"
   },
   "scripts": {
-    "build": "webpack --config webpack.config.js",
-    "dev": "webpack-dev-server  --devtool eval --progress --colors --config webpack.config.js --hot --history-api-fallback"
+    "start": "SET NODE_ENV=development& webpack-dev-server --devtool eval --progress --colors --config webpack.config.js --hot --history-api-fallback",
+    "build": "SET NODE_ENV=production& webpack  --config webpack.config.js"
   },
   "author": "Wallace Fares",
   "license": "ISC"
