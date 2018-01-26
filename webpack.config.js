@@ -44,16 +44,18 @@ const
   }
 
 if (process.env.NODE_ENV == 'production') {
-  config.plugins.push(new UglifyJsPlugin({
-    uglifyOptions: {
-      output: {
-        comments: false,
-        beautify: false,
+  config.plugins.push(
+    new UglifyJsPlugin({
+      uglifyOptions: {
+        output: {
+          comments: false,
+          beautify: false,
+        },
+        warnings: false,
       },
-      warnings: false,
-    },
-    sourceMap: true
-  }))
+      sourceMap: true
+    })
+  )
 }
 
 module.exports = config
