@@ -5,7 +5,7 @@ const
   UglifyJsPlugin = require('uglifyjs-webpack-plugin'),
   config = {
     entry: {
-      main: './src/js/main.js',
+      main: './src/js/main.js'
     },
     module: {
       rules: [

@@ -16,6 +16,7 @@ const Pages = new Component({
   }
 });
 
+/*
 export const router = new Router(Pages);
 
 const Components = new Component({
@@ -24,7 +25,7 @@ const Components = new Component({
     componentName: 'nav-app'
   }
 });
-
+*/
 
 
 
