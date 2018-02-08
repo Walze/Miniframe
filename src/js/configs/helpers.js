@@ -8,7 +8,7 @@ String.prototype.indexOfAll = function (text, add = 0) {
 
 
 
-window.prop = function (obj, propString) {
+window.accessProp = function (obj, propString) {
   if (!propString)
     return obj;
 

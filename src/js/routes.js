@@ -1,34 +1,34 @@
-import { Component } from './configs/ComponentMaker';
-import { Router } from './configs/router';
+import { Component } from './configs/ComponentMaker'
+import { Router } from './configs/router'
 
 const Pages = new Component({
   home: {
-    path: 'home.html',
-    componentName: 'home-app'
+    file: 'home.html',
+    name: 'home-component'
   },
   about: {
-    path: 'about.html',
-    componentName: 'about-app'
+    file: 'about.html',
+    name: 'about-component'
   },
   contact: {
-    path: 'contact.html',
-    componentName: 'contact-app'
+    file: 'contact.html',
+    name: 'contact-component'
   }
-});
+})
 
-/*
-export const router = new Router(Pages);
+
+export const router = new Router(Pages.HTMLS)
 
 const Components = new Component({
   nav: {
-    path: 'nav.html',
-    componentName: 'nav-app'
+    file: 'nav.html',
+    name: 'nav-app'
   }
-});
-*/
+})
+
 
 
 
 
 // Redirect Example
-// router.redirect('/contact');
+// router.redirect('/contact')

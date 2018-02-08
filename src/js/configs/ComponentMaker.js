@@ -1,37 +1,26 @@
 export class Component {
-  constructor(pages) {
-    const req = require.context('../../pages/', true, /^\.\/.*\.html$/)
-    const path = './'
-    const HTMLS = []
+  constructor(components) {
+    this.req = require.context('../../components/', true, /^\.\/.*\.html$/)
+    this.components = components
+    this._path = './'
+    this.HTMLS = []
+    this.TagsDOM = []
 
-    this.user = {
-      name: 'testaroo',
-      email: 'lol@q'
-    }
-
-    for (let page in pages) {
-      if (typeof pages[page].path != 'undefined') {
-        HTMLS[page] = req(path + pages[page].path)
-
-        this.interpolator(HTMLS[page])
-      }
-
-    }
-
+    this.render()
   }
 
-  interpolator(string) {
-    const starts = string.indexOfAll('${', 2)
-    const ends = string.indexOfAll('}$')
+  render() {
+    for (let component in this.components) {
+      if (typeof this.components[component].file != 'undefined') {
+        this.HTMLS[component] = this.req(this._path + this.components[component].file)
 
-    if (starts != -1) {
-      starts.map((inter, i) => {
-        let interpolated = string.slice(inter, ends[i])
+        const TagsDOM = document.querySelectorAll(this.components[component].name)
 
-        console.log(
-          prop(this, interpolated)
-        )
-      })
+        TagsDOM.forEach(el => {
+          this.TagsDOM.push(el)
+          el.innerHTML = this.HTMLS[component]
+        })
+      }
     }
   }
 }
