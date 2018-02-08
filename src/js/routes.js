@@ -3,28 +3,29 @@ import { Router } from './configs/router'
 
 const Pages = new Component({
   home: {
+    name: 'home-component',
     file: 'home.html',
-    name: 'home-component'
   },
   about: {
+    name: 'about-component',
     file: 'about.html',
-    name: 'about-component'
   },
   contact: {
+    name: 'contact-component',
     file: 'contact.html',
-    name: 'contact-component'
+  }
+})
+
+const Components = new Component({
+  nav: {
+    name: 'nav-app',
+    file: 'nav.html',
   }
 })
 
 
 export const router = new Router(Pages.HTMLS)
 
-const Components = new Component({
-  nav: {
-    file: 'nav.html',
-    name: 'nav-app'
-  }
-})
 
 
 

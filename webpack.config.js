@@ -25,7 +25,7 @@ const
           loader: 'file-loader?name=files/[name].[ext]'
         },
         {
-          test: /\.(pdf|jpe?g|png|gif|svg)$/i,
+          test: /\.(jpe?g|png|gif|svg)$/i,
           loader: 'file-loader?name=files/[name].[ext]'
         },
       ]
